@@ -1,0 +1,9 @@
+model:
+  groq_model: "llama3-70b-8192"
+  use_gpu: false
+
+logging:
+  level: "INFO"
+  format: "{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}"
+  log_to_file: true
+  file_path: "logs/app.log"

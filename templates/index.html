@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>LLM Query App</title></head>
+<body>
+  <h2>Ask a Question</h2>
+  <form method="POST" action="/query">
+    <input type="text" name="user_query" required>
+    <button type="submit">Ask</button>
+  </form>
+
+  {% if groq_response %}
+    <h3>Groq (LLaMA 3):</h3><p>{{ groq_response }}</p>
+  {% endif %}
+  {% if gemini_response %}
+    <h3>Gemini:</h3><p>{{ gemini_response }}</p>
+  {% endif %}
+</body>
+</html>

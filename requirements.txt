@@ -1,0 +1,8 @@
+flask
+google-generativeai
+loguru
+requests
+faiss-cpu
+python-dotenv
+pyyaml
+sentence-transformers
