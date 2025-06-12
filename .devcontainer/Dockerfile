@@ -1,14 +1,8 @@
-FROM python:3.11-slim
+FROM mcr.microsoft.com/devcontainers/python:3.11
 
 WORKDIR /workspace
 
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    libffi-dev \
-    libssl-dev \
-    zlib1g-dev \
-    curl \
-    && rm -rf /var/lib/apt/lists/*
+# Pre-installed: python, pip, venv, system tools
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
@@ -16,4 +10,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 CMD ["python", "src/main.py"]
+
 
